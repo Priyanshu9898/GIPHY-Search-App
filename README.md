@@ -77,15 +77,26 @@ npm run build
 
 ## API Reference
 
-#### Get all items
-
+    GIF URL For fetching Trending GIFS
 ```http
-  POST api/process_image
+    api.giphy.com/v1/gifs/trending
+````
+
+    GIF URL For Search
+```http
+    api.giphy.com/v1/gifs/search
 ```
+
+
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `image` | `file` |  Image For segmentation |
+| `api_key` | `String` |  GIPHY API Key. |
+| `q` | `String` |  Search query term or phrase.  |
+| `limit` | `integer (int32)` | The maximum number of objects to return. |
+| `offset` | `integer (int32)` |  GIPHY API Key. |
+| `api_key` | `String` |  	Specifies the starting position of the results. |
+
 
 
 ## In-depth Features Description
