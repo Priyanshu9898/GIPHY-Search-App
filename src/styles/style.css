@@ -1,0 +1,24 @@
+.lnk{
+    text-decoration: none;
+}
+.btnStyle{
+    background-color: red;
+    border: 2px solid red;
+}
+.btnStyle:hover{
+    background-color: rgb(231, 57, 57);
+    border: 2px solid red;
+}
+
+.loginContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.btnStyle:disabled{
+    background-color: red;
+    border: 2px solid red;
+}

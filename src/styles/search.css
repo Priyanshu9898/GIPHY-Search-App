@@ -1,0 +1,40 @@
+.containerSearch{
+    width: 80%;
+    overflow: hidden;
+}
+
+.inputSearch{
+    width: 60%;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .containerSearch{
+        width: 80%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .containerSearch{
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+  }
+
