@@ -138,7 +138,7 @@ const Register = () => {
 
                 <p className="mt-3" color={{ color: "#343a40" }}>
                   Already have an account?{" "}
-                  <Link to="/login" className="text-white lnk">
+                  <Link to="/" className="text-white lnk">
                     Login
                   </Link>
                 </p>
