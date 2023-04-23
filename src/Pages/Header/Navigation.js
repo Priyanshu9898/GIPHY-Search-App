@@ -29,7 +29,7 @@ const Navigation = () => {
     try{
       await signOut(auth);
       toast.success("Logged out Successfully", toastOptions);
-      navigate("/login");
+      navigate("/");
       
     }
     catch(err){
