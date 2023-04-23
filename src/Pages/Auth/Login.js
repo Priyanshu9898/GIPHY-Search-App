@@ -105,9 +105,9 @@ const Login = () => {
                 }}
                 className="mt-4"
               >
-                <Link to="/forgotPassword" className="text-white lnk">
+                {/* <Link to="/forgotPassword" className="text-white lnk">
                   Forgot Password?
-                </Link>
+                </Link> */}
 
                 <Button
                   type="submit"
