@@ -1,70 +1,157 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GIF Finder - GIF Search App
 
-## Available Scripts
+## Live Website: https://giphy-search-app-eight.vercel.app/
 
-In the project directory, you can run:
+## Project Description:
 
-### `npm start`
+    A React.js web application that allows users to search for GIFs using the GIPHY API. Users can log in or sign up using Firebase Authentication to access the GIF search functionality. The application fetches trending GIFs by default and updates the results based on the user's search input.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+**Frontend:** React, APIs, JavaScript, React-Bootstrap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Firebase Authentication (Email/Password based login and signup)
+    - Search for GIFs using the GIPHY API
+    - Display trending GIFs by default
+    - Pagination for browsing through GIFs
+    - Hot search: Instantly update search results while typing
+    - Loading animations for better user experience
+    - Hosted on Vercel
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
+    These instructions will help you set up and run the project on your local machine for development and testing purposes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Prerequisites
+- Node.js (v14.x.x or higher recommended)
+- npm (v6.x.x or higher recommended)
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    1. Clone the repository
+```bash
+  git clone https://github.com/Priyanshu9898/GIPHY-Search-App.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    2. Install dependencies 
+```bash
+  cd GIPHY-Search-App
+  npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    3. Set up your GIPHY API key and Firebase configuration
+    
+        Create a .env file in the root of your project and add your GIPHY API key and Firebase configuration:
+```bash
+  REACT_APP_GIPHY_API_KEY=GlVGYHkr3WSBnllca54iNt0yFbjz7L65
+  REACT_APP_FIREBASE_API_KEY="AIzaSyCXpJ87i1ZeF6EjOQWdSLJAPB6yyekREP8"
+  REACT_APP_FIREBASE_AUTH_DOMAIN="giffy-search-app.firebaseapp.com"
+  REACT_APP_FIREBASE_PROJECT_ID="giffy-search-app"
+  REACT_APP_FIREBASE_STORAGE_BUCKET="giffy-search-app.appspot.com"
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID="603094905845"
+  REACT_APP_FIREBASE_APP_ID="1:603094905845:web:d9be11923f97cf41c8e6bc"
+  REACT_APP_MEASUREMENT_ID="G-WGSYZ2M8MC"
 
-## Learn More
+```
+    4. Start the development server
+```bash
+  npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    This will run the app in development mode. Open http://localhost:3000 to view it in the browser. The page will reload if you make edits.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Building for production
+    To create a production build, run:
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    This will build the app for production and output the files to the build folder. The build is minified, and the filenames include the hashes for efficient caching.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Reference
 
-### Making a Progressive Web App
+#### Get all items
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```http
+  POST api/process_image
+```
 
-### Advanced Configuration
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `image` | `file` |  Image For segmentation |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## In-depth Features Description
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+- #### Firebase Authentication (Email/Password based login and signup)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    The application uses Firebase Authentication to manage user accounts. This allows users to securely sign up and log in using their email addresses and passwords. Firebase takes care of the entire authentication process, including storing user data and handling password resets. This allows the application to focus on its core functionality while providing a secure and reliable user authentication system.
+
+- #### Search for GIFs using the GIPHY API
+
+    The core feature of the application is to search and display GIFs from the GIPHY API. Users can enter a search query, and the application fetches relevant GIFs using the GIPHY API's search endpoint. The search results are then displayed in a responsive grid layout, with each GIF accompanied by its title. This enables users to easily find and browse GIFs based on their interests.
+
+- #### Display trending GIFs by default
+
+    When the application is first loaded or when the search input is cleared, the app fetches and displays trending GIFs from the GIPHY API. This provides an engaging user experience, as users are presented with popular and up-to-date content by default. Trending GIFs are retrieved using the GIPHY API's trending endpoint, which returns a list of currently popular GIFs on the platform.
+
+- #### Pagination for browsing through GIFs
+    The application implements pagination to allow users to easily browse through large numbers of GIFs. Search results are limited to a fixed number of GIFs per page (e.g., 12). Users can navigate through the pages of results using "Previous" and "Next" buttons. This improves the user experience by preventing the page from becoming cluttered with too many images and reducing the amount of data loaded at once.
+
+- #### Hot search: Instantly update search results while typing
+    The application features a "hot search" functionality that updates search results in real-time as users type in the search input. This provides a more interactive and responsive user experience, as users can quickly refine their search queries without having to submit a form or click a button. This feature is implemented by fetching search results from the GIPHY API each time the search input value changes.
+
+- #### Hosted on Vercel
+    The application can be deployed and hosted on popular platforms like Vercel. This allows users to access the app through a public URL, providing a seamless experience without requiring them to set up the project locally. Both Vercel and GitHub Pages offer free hosting options for static websites, making them ideal choices for deploying a React application like this one.
+
+- #### Cross-platform Compatibility:
+    The application is compatible with different platforms, as it is built using popular web technologies such as React. Users can access it through modern web browsers without needing to install additional software.
+
+
+- #### Ease of Deployment: 
+    The project can be easily deployed on various hosting platforms, thanks to React.
+
+## Screenshots
+
+![App Screenshot 1](https://i.postimg.cc/Jz6CPxNL/React-App-Brave-23-04-2023-12-22-16.png)
+
+![App Screenshot 4](https://i.postimg.cc/1z8hTFBN/React-App-Brave-23-04-2023-12-54-44.png)
+
+![App Screenshot 2](https://i.postimg.cc/LsGKMsQQ/React-App-Brave-23-04-2023-12-22-34.png)
+
+![App Screenshot 3](https://i.postimg.cc/50vc9MZ4/React-App-Brave-23-04-2023-12-23-36.png)
+
+
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Priyanshu9898/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/priyanshumalaviya/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Priyanshu2281)
+[![Medium](https://img.shields.io/badge/medum-1DA1F2?style=for-the-badge&logo=medium&logoColor=black)](https://medium.com/@priyanshumalaviya9210)
+## Demo
+
+Insert gif or link to demo
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
