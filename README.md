@@ -11,6 +11,7 @@
 ## Tech Stack
 
 **Frontend:** React, APIs, JavaScript, React-Bootstrap
+**Database:** Firebase
 
 
 ## Features
