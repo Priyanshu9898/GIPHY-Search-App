@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { auth } from "../../firebaseConfig.js";
-import { signInWithEmailAndPassword  } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import ParticleEffect from "../../components/ParticleEffect.js";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -36,34 +36,32 @@ const Login = () => {
 
     const { email, password } = values;
 
-    if(!email || !password) {
+    if (!email || !password) {
       toast.error("Please Enter all Details", toastOptions);
+    } else {
+      try {
+        const result = await signInWithEmailAndPassword(auth, email, password);
+        // Clear All Form Data
+        setValues({
+          email: "",
+          password: "",
+        });
+
+        console.log(result);
+
+        toast.success("User has successfully Logged In", toastOptions);
+
+        navigate("/home");
+      } catch (err) {
+        toast.error("Error Signing in", toastOptions);
+      }
     }
-
-    try{
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      // Clear All Form Data
-      setValues({
-        email: "",
-        password: "",
-        
-      });
-
-      console.log(result);
-
-      toast.success("User has successfully Logged In", toastOptions);
-
-      navigate("/");
-
-    }catch(err){
-      toast.error("Error Signing in", toastOptions);
-    }
-
-
-
   };
   return (
-    <div style={{ position: "relative", overflow: "hidden" }} className="loginContainer">
+    <div
+      style={{ position: "relative", overflow: "hidden" }}
+      className="loginContainer"
+    >
       <ParticleEffect />
       <Container
         className=""
@@ -129,7 +127,7 @@ const Login = () => {
             </Form>
           </Col>
         </Row>
-        <ToastContainer style={{ zIndex: "2 !important"}} />
+        <ToastContainer style={{ zIndex: "2 !important" }} />
       </Container>
     </div>
   );

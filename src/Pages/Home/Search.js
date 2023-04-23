@@ -23,7 +23,7 @@ const Search = () => {
     const fetchTrendingGifs = async () => {
       setLoading(true);
       const response = await axios.get(
-        `https://api.giphy.com/v1/gifs/trending?api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65&limit=${limit}&offset=${offset}`
+        `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&limit=${limit}&offset=${offset}`
       );
       setGifs(response.data.data);
       setLoading(false);
@@ -36,7 +36,7 @@ const Search = () => {
     const fetchGifs = async () => {
       setLoading(true);
       const response = await axios.get(
-        `https://api.giphy.com/v1/gifs/search?api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65&q=${search}&limit=${limit}&offset=${offset}`
+        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_API_KEY}&q=${search}&limit=${limit}&offset=${offset}`
       );
       setGifs(response.data.data);
       setLoading(false);

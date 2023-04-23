@@ -4,13 +4,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXpJ87i1ZeF6EjOQWdSLJAPB6yyekREP8",
-  authDomain: "giffy-search-app.firebaseapp.com",
-  projectId: "giffy-search-app",
-  storageBucket: "giffy-search-app.appspot.com",
-  messagingSenderId: "603094905845",
-  appId: "1:603094905845:web:d9be11923f97cf41c8e6bc",
-  measurementId: "G-WGSYZ2M8MC"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 

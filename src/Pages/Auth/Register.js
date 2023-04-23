@@ -39,33 +39,30 @@ const Register = () => {
 
     if (!name || !email || !password) {
       toast.error("Please enter All Fields", toastOptions);
-    }
+    } else {
+      try {
+        // Create User
+        const result = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
-    try{
-      // Create User
-      const result = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+        console.log(result);
 
+        toast.success("User has Registered Successfully", toastOptions);
 
-      console.log(result);
+        setValues({
+          email: "",
+          password: "",
+          name: "",
+        });
 
-      toast.success("User has Registered Successfully", toastOptions);
-      
-      setValues({
-        email: "",
-        password: "",
-        name: "",
-      });
-
-      navigate("/");
-
-
-    }
-    catch(err) {
-      toast.error(`Error Signing in ${err.message}`, toastOptions);
+        navigate("/home");
+      } catch (err) {
+        navigate("/");
+        toast.error(`Error Signing in ${err.message}`, toastOptions);
+      }
     }
   };
 
@@ -83,9 +80,7 @@ const Register = () => {
           <h1 className="text-center">
             {/* <AccountBalanceWalletIcon sx={{ fontSize: 40, color: "white"}}  className="text-center" /> */}
           </h1>
-          <h1 className="text-center text-white">
-            Welcome to GiphyFinder
-          </h1>
+          <h1 className="text-center text-white">Welcome to GiphyFinder</h1>
           <Col md={{ span: 6, offset: 3 }}>
             <h2 className="text-white text-center mt-5">Registration</h2>
             <Form>
