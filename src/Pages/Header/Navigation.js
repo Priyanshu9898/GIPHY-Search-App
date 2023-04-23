@@ -42,7 +42,7 @@ const Navigation = () => {
       <ParticleEffect />
       <Navbar bg="transparent"  expand="lg" variant="dark" className="px-2">
         <Container fluid>
-          <Link to="/" style={{color: "white", textDecoration: "none"}}><h1>GIPHY Finder</h1></Link>
+          <Link to="/home" style={{color: "white", textDecoration: "none"}}><h1>GIPHY Finder</h1></Link>
           
           
             <div>
